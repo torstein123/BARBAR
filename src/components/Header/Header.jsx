@@ -1,0 +1,42 @@
+import React from 'react';
+import { Autocomplete } from '@react-google-maps/api';
+import {AppBar, Toolbar, Typography, InputBase, Box} from '@material-ui/core';
+import searchIcon from '@material-ui/icons/Search';
+import useStyles from './styles';
+
+
+const Header = () => {
+    const classes = useStyles();
+    return (
+        <AppBar position ="static">
+            <Toolbar className={classes.Toolbar}>
+                <Typography variant="h5" className={classes.title}>
+                    Barbar
+
+                </Typography>
+                <Box display="flex">
+                <Typography variant="h6" className={classes.title}>
+                    Drikk deg dritings!
+
+                </Typography>
+                {/*<Autocomplete>*/}
+                    <div className={classes.search}>
+                        <div className={classes.searchIcon}>
+                            <searchIcon/>
+                        </div>
+                        <InputBase placeholder='Search...' classes={{ root:classes.inputRoot, input:classes.inputInput}}>
+
+                        </InputBase>
+                    </div>
+                {/*</Autocomplete>*/}
+
+                </Box>
+
+            </Toolbar>
+
+        </AppBar>
+
+    );
+}
+
+export default Header
